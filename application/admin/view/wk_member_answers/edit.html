@@ -1,0 +1,46 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Batch_number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-batch_number" class="form-control" name="row[batch_number]" type="number" value="{$row.batch_number|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Exam_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-exam_id" data-rule="required" data-source="exam/index" class="form-control selectpage" name="row[exam_id]" type="text" value="{$row.exam_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Question_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-question_id" data-rule="required" data-source="question/index" class="form-control selectpage" name="row[question_id]" type="text" value="{$row.question_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Question_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-question_name" class="form-control " rows="5" name="row[question_name]" cols="50">{$row.question_name|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Answer')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-answer" class="form-control " rows="5" name="row[answer]" cols="50">{$row.answer|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Score')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-score" class="form-control" name="row[score]" type="number" value="{$row.score|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
