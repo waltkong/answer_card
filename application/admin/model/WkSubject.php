@@ -27,10 +27,18 @@ class WkSubject extends Model
     protected $append = [
 
     ];
-    
 
-    
 
+
+    public static function getOptions(){
+        $list = self::order("sort", 'desc')->limit(0, 500)->select();
+        $list = collection($list)->toArray();
+        $ret = [];
+        foreach ($list as $k => $v){
+            $ret[$v['id']] = $v['name'];
+        }
+        return $ret;
+    }
 
 
 

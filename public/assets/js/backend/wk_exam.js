@@ -25,7 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'subject_id', title: __('Subject_id')},
+                        {field: 'wksubject.name', title: __('Wksubject.name')},
                         {field: 'name', title: __('Name')},
                         {field: 'school', title: __('School')},
                         {field: 'author', title: __('Author')},
@@ -35,16 +35,37 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'click_count', title: __('Click_count')},
                         {field: 'like_count', title: __('Like_count')},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'updatetime', title: __('Updatetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'wksubject.id', title: __('Wksubject.id')},
-                        {field: 'wksubject.name', title: __('Wksubject.name')},
-                        {field: 'wksubject.icon_image', title: __('Wksubject.icon_image'), events: Table.api.events.image, formatter: Table.api.formatter.image},
-                        {field: 'wksubject.sort', title: __('Wksubject.sort')},
-                        {field: 'wksubject.click_count', title: __('Wksubject.click_count')},
-                        {field: 'wksubject.createtime', title: __('Wksubject.createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'wksubject.updatetime', title: __('Wksubject.updatetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'wksubject.deletetime', title: __('Wksubject.deletetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
+                        {field: 'operate',
+                            title: __('Operate'),
+                            table: table,
+                            events: Table.api.events.operate,
+                            formatter: Table.api.formatter.operate,
+                            buttons: [
+                                // {
+                                //     name: 'audit',
+                                //     text: '审核',
+                                //     title: '审核',
+                                //     classname: 'btn btn-xs btn-primary btn-dialog',
+                                //     icon: 'fa fa-list',
+                                //     url: '/admin/scp_apply/audit',
+                                //     callback: function (data) {
+                                //         Layer.alert("接收到回传数据：" + JSON.stringify(data), {title: "回传数据"});
+                                //     },
+                                //     visible: function (row) {
+                                //         //返回true时按钮显示,返回false隐藏
+                                //         return true;
+                                //     }
+                                // },
+                                {
+                                    name: 'default_excel',
+                                    text: 'excel',
+                                    title: '获取excel模板',
+                                    classname: 'btn btn-xs btn-warning btn-addtabs',
+                                    icon: 'fa fa-folder-o',
+                                    url: '/admin/wk_exam/default_excel'
+                                }
+                            ],
+                        }
                     ]
                 ]
             });
