@@ -1,0 +1,1 @@
+<view class="container"><view class="question_index_card scroll-view-item"><block wx:for="{{questionIndexes}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="question_index_card_item"><text>{{''+item}}</text></view></block></view></view>

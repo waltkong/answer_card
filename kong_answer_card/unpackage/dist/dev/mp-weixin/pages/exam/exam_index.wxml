@@ -1,0 +1,1 @@
+<view class="container"><view data-event-opts="{{[['tap',[['startAnswer',['$event']]]]]}}" class="start_answer" bindtap="__e"><text>开始答题</text></view></view>
